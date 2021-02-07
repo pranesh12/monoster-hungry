@@ -20,7 +20,7 @@ let displayData = data => {
         let mealList = document.createElement("div");
         // console.log(mealsData.idMeal)
         let mealsHtml = `
-        <div class="meals" onClick ="showIngredients(${mealsData.idMeal})">
+        <div class="meals" onClick ="getIngredients(${mealsData.idMeal})">
             <div class="meal-img">
                 <img src=${mealsData.strMealThumb} alt=${mealsData.strMeal}>
             </div>
@@ -34,8 +34,7 @@ let displayData = data => {
     });
 }
 
-let showIngredients = (id) => {
-    // https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772
+let getIngredients = (id) => {
     fetch(` https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
     .then(res => res.json())
     .then(data => displayIngredients(data.meals[0]))
@@ -43,9 +42,30 @@ let showIngredients = (id) => {
 
 let displayIngredients = (ingredients) => {
     let mealName = ingredients.strMeal;
-    let list = ingredients.strMeasure1;
     let mealImage = ingredients.strMealThumb;
-    console.log(mealImage)
-    console.log(list);
-console.log(ingredients)
+    let info = document.getElementById('info');
+
+    let mealsHTML = `
+    <div class="image">
+            <img src =${mealImage} alt=${mealName}>
+        </div>
+        <div class="image-name padding">
+            <h1>${mealName}</h1>
+        </div>
+        <div class="padding ingredients-list">
+            <h3>Ingredients</h3>
+            <ul>
+                <li>${ingredients.strMeasure1} ${ingredients.strIngredient1}</li>
+                <li>${ingredients.strMeasure2} ${ingredients.strIngredient2}</li>
+                <li>${ingredients.strMeasure3} ${ingredients.strIngredient3}</li>
+                <li>${ingredients.strMeasure4} ${ingredients.strIngredient4}</li>
+                <li>${ingredients.strMeasure5} ${ingredients.strIngredient5}</li>
+                <li>${ingredients.strMeasure6} ${ingredients.strIngredient6}</li>
+                <li>${ingredients.strMeasure7} ${ingredients.strIngredient7}</li>
+                <li>${ingredients.strMeasure8} ${ingredients.strIngredient8}</li>
+               
+            </ul>
+        </div>
+    `;
+   info.innerHTML = mealsHTML;
 }
