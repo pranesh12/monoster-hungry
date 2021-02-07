@@ -106,11 +106,16 @@
 }
 .ingredients-list li {
   padding-top: 10px;
-  padding-left: 5px;
+  /* padding-left: 5px; */
   list-style-type: none;
 }
 .fas{
     color: #F06C4E;
     background: white;
     margin-right: 7px;
+}
+footer{
+  margin-top: 30px;
+  text-align: center;
+  margin-bottom: 10px;
 }

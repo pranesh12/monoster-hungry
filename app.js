@@ -1,18 +1,21 @@
-// https://www.themealdb.com/api/json/v1/1/search.php?s=Chicken
+//endpoint = https://www.themealdb.com/api/json/v1/1/search.php?s=Chicken
 let input = document.getElementById("input");
 let searchButton = document.getElementById("button");
 
 searchButton.addEventListener("click", () => {
-    var inputValue = input.value;
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`)
-        .then(res => res.json())
-        .then(data => displayData(data));
+    var inputValue = input.value.trim();
+    if (inputValue != "") {
+        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`)
+            .then(res => res.json())
+            .then(data => displayData(data));
+    }
+
 
 })
 
 //Displaying Meals in the front page
 let displayData = data => {
-     let meals = data.meals.slice(0, 12);
+    let meals = data.meals.slice(0, 12);
     let mealContiner = document.getElementById("meal-container");
 
 
@@ -29,17 +32,19 @@ let displayData = data => {
             </div>
         </div>
     `;
-    mealList.innerHTML = mealsHtml;
-    mealContiner.appendChild(mealList);
+        mealList.innerHTML = mealsHtml;
+        mealContiner.appendChild(mealList);
     });
 }
 
 let getIngredients = (id) => {
     fetch(` https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
-    .then(res => res.json())
-    .then(data => displayIngredients(data.meals[0]))
+        .then(res => res.json())
+        .then(data => displayIngredients(data.meals[0]))
 }
 
+
+//showing ingredients in below the same page
 let displayIngredients = (ingredients) => {
     let mealName = ingredients.strMeal;
     let mealImage = ingredients.strMealThumb;
@@ -67,5 +72,5 @@ let displayIngredients = (ingredients) => {
             </ul>
         </div>
     `;
-   info.innerHTML = mealsHTML;
+    info.innerHTML = mealsHTML;
 }
