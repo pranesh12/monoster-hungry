@@ -3,22 +3,19 @@ let input = document.getElementById("input");
 let searchButton = document.getElementById("button");
 
 searchButton.addEventListener("click", () => {
+    document.getElementById('meal-container').innerHTML = "";
     var inputValue = input.value.trim();
     if (inputValue != "") {
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`)
             .then(res => res.json())
             .then(data => displayData(data));
     }
-
-
 })
 
 //Displaying Meals in the front page
 let displayData = data => {
     let meals = data.meals.slice(0, 12);
     let mealContiner = document.getElementById("meal-container");
-
-
     meals.forEach(mealsData => {
         let mealList = document.createElement("div");
         // console.log(mealsData.idMeal)
@@ -34,6 +31,7 @@ let displayData = data => {
     `;
         mealList.innerHTML = mealsHtml;
         mealContiner.appendChild(mealList);
+
     });
 }
 
@@ -49,7 +47,6 @@ let displayIngredients = (ingredients) => {
     let mealName = ingredients.strMeal;
     let mealImage = ingredients.strMealThumb;
     let info = document.getElementById('info');
-
     let mealsHTML = `
     <div class="image">
             <img src =${mealImage} alt=${mealName}>
