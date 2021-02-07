@@ -55,14 +55,14 @@ let displayIngredients = (ingredients) => {
         <div class="padding ingredients-list">
             <h3>Ingredients</h3>
             <ul>
-                <li>${ingredients.strMeasure1} ${ingredients.strIngredient1}</li>
-                <li>${ingredients.strMeasure2} ${ingredients.strIngredient2}</li>
-                <li>${ingredients.strMeasure3} ${ingredients.strIngredient3}</li>
-                <li>${ingredients.strMeasure4} ${ingredients.strIngredient4}</li>
-                <li>${ingredients.strMeasure5} ${ingredients.strIngredient5}</li>
-                <li>${ingredients.strMeasure6} ${ingredients.strIngredient6}</li>
-                <li>${ingredients.strMeasure7} ${ingredients.strIngredient7}</li>
-                <li>${ingredients.strMeasure8} ${ingredients.strIngredient8}</li>
+                <li><i class="fas fa-check-square"></i> ${ingredients.strMeasure1} ${ingredients.strIngredient1}</li>
+                <li><i class="fas fa-check-square"></i> ${ingredients.strMeasure2} ${ingredients.strIngredient2}</li>
+                <li><i class="fas fa-check-square"></i> ${ingredients.strMeasure3} ${ingredients.strIngredient3}</li>
+                <li><i class="fas fa-check-square"></i>${ingredients.strMeasure4} ${ingredients.strIngredient4}</li>
+                <li><i class="fas fa-check-square"></i>${ingredients.strMeasure5} ${ingredients.strIngredient5}</li>
+                <li><i class="fas fa-check-square"></i>${ingredients.strMeasure6} ${ingredients.strIngredient6}</li>
+                <li><i class="fas fa-check-square"></i> ${ingredients.strMeasure7} ${ingredients.strIngredient7}</li>
+                <li><i class="fas fa-check-square"></i> ${ingredients.strMeasure8} ${ingredients.strIngredient8}</li>
                
             </ul>
         </div>

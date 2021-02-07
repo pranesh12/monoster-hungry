@@ -1,55 +1,116 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
 }
-.container{
-    max-width: 1100px;
-    margin: 15px auto;
+.container {
+  max-width: 1100px;
+  margin: 15px auto;
 }
-input {
-    width: 40%;
-    padding: 5px 16px;
 
+.nav {
+  display: flex;
+  justify-content: space-between;
 }
-button{
-    border: none;
-    padding: 7px 16px;
-    border-radius: 5px;
-    background: orange;
-    color: white;
+.logo img {
+  width: 97px;
+  height: 74px;
 }
-.meals{
-    width: 270px;
-    height: 280px;
-    background-color:  #F8F7F5;
+.nav-items {
+  display: flex;
+}
+.nav-items ul {
+  list-style-type: none;
+  display: flex;
+}
+.nav-items li {
+  padding: 0 14px;
+}
+.nav-items li a {
+  text-decoration: none;
+  color: black;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.search #button {
+  background: #f06c4e;
+  width: 111px;
+  height: 60px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+.search #input {
+  width: 40%;
+  padding: 5px 26px;
+  background-color: #f8f7f5;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+#button:hover {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.meals {
+  width: 270px;
+  height: 280px;
+  background-color: #f8f7f5;
+  border-radius: 20px;
 }
 #meal-container {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 10px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 30px;
 }
-.meal-img img{
-    width: 270px;
-    height: 226px;
-    
+.meal-img img {
+  width: 270px;
+  height: 226px;
 }
-.meal-name{
+.meal-name {
   text-align: center;
   margin-top: 15px;
 }
-
-.ingredients img{
-    border-radius: 10px;
-    height: 322px;
-    width: 500px;
+.ingredients {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+.ingredients img {
+  border-radius: 10px;
+  height: 322px;
+  width: 500px;
 }
 
-.padding{
-    padding: 10px;
+.padding {
+  padding: 10px;
 }
-.ingredients-list h3{
-    text-transform: capitalize;
-    margin: 10px 0;
+.ingredients-list h3 {
+  text-transform: capitalize;
+  margin: 10px 0;
+}
 
+.recepie-name {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.meals:hover {
+  cursor: pointer;
+}
+.ingredients-list li {
+  padding-top: 10px;
+  padding-left: 5px;
+  list-style-type: none;
+}
+.fas{
+    color: #F06C4E;
+    background: white;
+    margin-right: 7px;
 }
