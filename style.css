@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    max-width: 1100px;
+    margin: 15px auto;
+}
+input {
+    width: 40%;
+    padding: 5px 16px;
+
+}
+button{
+    border: none;
+    padding: 7px 16px;
+    border-radius: 5px;
+    background: orange;
+    color: white;
+}
+.meals{
+    width: 270px;
+    height: 280px;
+    background-color:  #F8F7F5;
+}
+#meal-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+}
+.meal-img img{
+    width: 270px;
+    height: 226px;
+    
+}
+.meal-name{
+  text-align: center;
+  margin-top: 15px;
+}
+
+.ingredients img{
+    border-radius: 10px;
+    height: 322px;
+    width: 500px;
+}
+
+.padding{
+    padding: 10px;
+}
+.ingredients-list h3{
+    text-transform: capitalize;
+    margin: 10px 0;
+
+}
